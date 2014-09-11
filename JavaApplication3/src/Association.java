@@ -8,7 +8,7 @@
  *
  * @author Alejo
  */
-/*Tomado del material colocado en Blaackboard*/
+/*El codigo fue tomado del material que se ha visto en clase*/
 public class Association<K,V>
 {
     /**

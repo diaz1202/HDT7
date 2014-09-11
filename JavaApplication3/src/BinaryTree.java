@@ -1,17 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Alejo
- */
-/*Codigo tomado del material subido en blackboard*/
 
 public class BinaryTree<E>
-
 {
 
     protected E val; // value associated with node
@@ -50,8 +39,8 @@ public class BinaryTree<E>
 	{
 		return left;
 	}
-        
-        public BinaryTree<E> right()
+	
+	public BinaryTree<E> right()
 	// post: returns reference to (possibly empty) left subtree
 	// post: returns reference to (possibly empty) left subtree
 	{
@@ -60,9 +49,9 @@ public class BinaryTree<E>
 	
 	public BinaryTree<E> parent()
 	// post: returns reference to parent node, or null
-        {
-            return parent;
-        }
+	{
+		return parent;
+	}
 	public void setLeft(BinaryTree<E> newLeft)
 	// post: sets left subtree to newLeft
 	// re-parents newLeft if not null
@@ -72,17 +61,17 @@ public class BinaryTree<E>
 		left = newLeft;
 		left.setParent(this);
 	}
-        
-        public void setRight(BinaryTree<E> newLeft)
+	
+	public void setRight(BinaryTree<E> newRight)
 	// post: sets left subtree to newLeft
 	// re-parents newLeft if not null
 	{
 		if (isEmpty()) return;
 		if (right != null && right.parent() == this) right.setParent(null);
-		right = newLeft;
-		right.setParent(this);
+		right = newRight;
+		left.setParent(this);
 	}
-	
+
 	protected void setParent(BinaryTree<E> newParent)
 	// post: re-parents this node to parent reference, or null
 	{
@@ -91,6 +80,15 @@ public class BinaryTree<E>
 		}
 	}
 	
+	public boolean isEmpty(){
+		if(val==null){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+			
 	public E value()
 	// post: returns value associated with this node
 	{
@@ -102,13 +100,5 @@ public class BinaryTree<E>
 	{
 		val = value;
 	}
-        
-        public boolean isEmpty(){
-            if(val==null){
-                return false;
-            }else{
-                return true;
-            }
-        }
 	
 }
